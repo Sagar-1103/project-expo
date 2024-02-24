@@ -13,7 +13,7 @@ export const Project = (props) => {
         <MdOpenInNew color='black' size={30} />
         </div>
         <br />
-        <div className='flex flex-wrap text-gray-500'>
+        <div className='text-gray-500'>
         <p className='text-sm ' >Upload by : {email}</p>
         <p className='text-sm' >Created on : {date}</p>
         </div>
