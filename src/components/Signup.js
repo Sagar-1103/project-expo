@@ -27,11 +27,11 @@ export const Signup = () => {
     }
   }
   return (
-    <div className="hero min-h-screen bg-base-200">
-    <div className="hero-content flex-col">
+    <div className="hero min-h-screen bg-gradient-to-r from-purple-500 to-pink-500 ">
+    <div className="hero-content flex-col ">
       <div className="text-center">
         <h1 className="text-5xl font-bold">Singup now!</h1>
-        <p className="py-6 lg:w-[50%] mx-auto">Singup to our Project Expo to post projects and also find out the projects made by other students.</p>
+        <p className="py-6 lg:w-[50%] mx-auto font-medium">Singup to our Project Expo to post projects and also find out the projects made by other students.</p>
       </div>
       <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <form onSubmit={handleSubmit} className="card-body">
