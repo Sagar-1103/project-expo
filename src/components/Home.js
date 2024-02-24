@@ -1,19 +1,18 @@
 import React from 'react'
-import useAuth from "../hooks/useAuth"
 import { Project } from './Project';
+import useFirestore from '../hooks/useFirestore';
 
 export const Home = () => {
-  const {user} = useAuth();
-  console.log(user);
+  const {posts} = useFirestore("posts");
+  // console.log(posts);
   return (
+    <div className='bg-gradient-to-r from-fuchsia-500 to-cyan-500 min-h-screen'>
     <div className='container p-5 flex flex-wrap mx-auto justify-center lg:justify-between'>
-     <Project/>
-     <Project/>
-     <Project/>
-     <Project/>
-     <Project/>
-     <Project/>
-     <Project/>
+    {posts && posts.map((post)=>(
+      <Project key={post.imageUrl} title={post.projectTitle} description={post.projectDescription} imageUrl={post.imageUrl} />
+    ))}
+
+    </div>
     </div>
   )
 }
