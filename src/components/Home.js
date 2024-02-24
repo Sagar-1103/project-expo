@@ -9,7 +9,7 @@ export const Home = () => {
     <div className='bg-gradient-to-r from-fuchsia-500 to-cyan-500 min-h-screen'>
     <div className='container p-5 flex flex-wrap mx-auto justify-center lg:justify-between'>
     {posts && posts.map((post)=>(
-      <Project key={post.imageUrl} title={post.projectTitle} description={post.projectDescription} imageUrl={post.imageUrl} />
+      <Project key={post.imageUrl} date={post.createdAt} title={post.projectTitle} email={post.userEmail} description={post.projectDescription} imageUrl={post.imageUrl} />
     ))}
 
     </div>

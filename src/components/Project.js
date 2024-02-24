@@ -2,9 +2,7 @@ import React from 'react'
 import { MdOpenInNew } from "react-icons/md";
 
 export const Project = (props) => {
-  const {title,description,imageUrl} = props;
-  const date = "11-11-2003";
-  const email = "sagarshirgaonkar59511@gmail.com";
+  const {title,description,imageUrl,email,date} = props;
   return (
     <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-10 relative">
       <img className="w-full h-48 object-cover object-center" src={imageUrl} alt="blog" />
@@ -16,8 +14,8 @@ export const Project = (props) => {
         </div>
         <br />
         <div className='flex flex-wrap text-gray-500'>
-        <p className='text-sm ' >Upload by: {email}</p>
-        <p className='text-sm' >Created on: {date}</p>
+        <p className='text-sm ' >Upload by : {email}</p>
+        <p className='text-sm' >Created on : {date}</p>
         </div>
       </div>
     </div>
