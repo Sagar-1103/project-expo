@@ -31,7 +31,7 @@ export const Home = () => {
         {!projects.length && !isChecked && (
           <div  className=' container mx-auto pt-[30%] lg:pt-[7%] md:w-[40%]'>
       <Lottie animationData={LoaderAnimation} loop={true}/>
-      <p className='text-center text-white text-3xl font-semibold md:font-bold'>You don't have any Projects :(</p>
+      <p className='text-center text-white text-3xl font-semibold md:font-bold'>Loading Projects...</p>
     </div>
         )}
         {!projects.length && isChecked && (
