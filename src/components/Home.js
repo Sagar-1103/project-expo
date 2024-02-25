@@ -3,6 +3,7 @@ import { Project } from './Project';
 import useFirestore from '../hooks/useFirestore';
 import useAuth from '../hooks/useAuth';
 import errorAnimation from "../animation/404.json"
+import LoaderAnimation from "../animation/Loader.json"
 import Lottie from 'lottie-react';
 
 export const Home = () => {
@@ -27,6 +28,12 @@ export const Home = () => {
 
   return (
     <div className='bg-gradient-to-r from-fuchsia-500 to-cyan-500 relative min-h-screen'>
+        {!projects.length && !isChecked && (
+          <div  className=' container mx-auto pt-[30%] lg:pt-[7%] md:w-[40%]'>
+      <Lottie animationData={LoaderAnimation} loop={true}/>
+      <p className='text-center text-white text-3xl font-semibold md:font-bold'>You don't have any Projects :(</p>
+    </div>
+        )}
         {!projects.length && isChecked && (
           <div  className=' container mx-auto pt-[30%] lg:pt-[7%] md:w-[40%]'>
       <Lottie animationData={errorAnimation} loop={true}/>
