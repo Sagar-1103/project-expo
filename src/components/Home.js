@@ -7,7 +7,7 @@ import Lottie from 'lottie-react';
 
 export const Home = () => {
   const [isChecked, setIsChecked] = useState(false);
-  const [projects,setProjects] = useState(null);
+  const [projects,setProjects] = useState([]);
   const handleChange = (event) => {
     setIsChecked(event.target.checked);
   };
@@ -27,10 +27,12 @@ export const Home = () => {
 
   return (
     <div className='bg-gradient-to-r from-fuchsia-500 to-cyan-500 relative min-h-screen'>
-        <div hidden={projects.length} className=' container mx-auto pt-[30%] lg:pt-[7%] md:w-[40%]'>
+        {!projects.length && isChecked && (
+          <div  className=' container mx-auto pt-[30%] lg:pt-[7%] md:w-[40%]'>
       <Lottie animationData={errorAnimation} loop={true}/>
       <p className='text-center text-white text-3xl font-semibold md:font-bold'>You don't have any Projects :(</p>
     </div>
+        )}
       <div className='h-[1rem]'></div>
       <div className="form-control w-[8rem] bg-gray-300 font-semibold px-1 rounded-xl absolute right-3 top-3">
         <label className="label cursor-pointer">
