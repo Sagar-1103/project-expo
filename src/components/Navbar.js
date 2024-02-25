@@ -43,7 +43,7 @@ export const Navbar = () => {
     <span className="text-xl p-3">{(user.email.slice(0,1)).toUpperCase()}</span>
   </div>
 </div>
-  <ul tabIndex={0} className="dropdown-content z-[1] menu pr-2 shadow bg-base-100 rounded-box font-semibold">
+  <ul tabIndex={0} className="dropdown-content bg-white z-[1] menu pr-2 shadow text-gray-800 rounded-box font-semibold">
     <li><Link>{user.email}</Link></li>
     <li><Link onClick={handleLogout}>Logout</Link></li>
   </ul>
