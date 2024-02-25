@@ -10,7 +10,7 @@ const useStorage = ()=>{
     const [error,setError] = useState(null);
     const {user} = useAuth();
 
-    const addPost =(title,description,image,report)=>{
+    const addPost =(title,description,image,report,setShowalert)=>{
         if (!title && !description && !image && !report ) {
             return;    
         }
@@ -54,6 +54,10 @@ const useStorage = ()=>{
                   });
                 setProgress(0);
                 console.log("Uploaded");
+                setShowalert(true);
+                setTimeout(() => {
+                  setShowalert(false);
+                }, 3000);
                 });
     
 

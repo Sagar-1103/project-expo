@@ -8,6 +8,8 @@ export const Upload = () => {
   const [image,setImage] = useState(null);
   const [report,setReport] = useState(null);
 
+  const [showalert,setShowalert] = useState(false);
+
   const handleImageChange = (e)=>{
     if (e.target.files && e.target.files[0]) {
       setImage(e.target.files[0]);
@@ -22,17 +24,20 @@ export const Upload = () => {
   const handleSubmit = async(e)=>{
     e.preventDefault();
     if (image && report && title && description) {
-      addPost(title,description,image,report)
+       addPost(title,description,image,report,setShowalert);
     }
     setTitle("");
     setDescription("");
     setImage(null);
     setReport(null);
-
   }
 
   return (
-    <div className="min-h-screen p-3 bg-gradient-to-r from-fuchsia-500 to-cyan-500 flex justify-center items-center">
+    <div className="min-h-screen p-3 bg-gradient-to-r from-fuchsia-500 to-cyan-500 flex justify-center items-center md:relative">
+      {showalert && <div role="alert" className="alert alert-success absolute top-0">
+      <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      <span>Your Project has been posted!</span>
+    </div>}
   <div className="bg-white rounded-lg shadow-lg">
     <h2 className="text-2xl font-bold p-4 text-center -mb-5 text-black">Project Submission Form</h2>
     <div className="divider px-5"></div> 

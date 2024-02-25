@@ -2,8 +2,10 @@ import { signOut } from 'firebase/auth';
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { auth } from '../firebase/config';
+import useAuth from '../hooks/useAuth';
 
 export const Navbar = () => {
+  const {user} = useAuth();
   const handleLogout=async()=>{
     try {
       await signOut(auth);
@@ -34,8 +36,18 @@ export const Navbar = () => {
         <Link to={"/upload"} className={`${path==="/upload"?"bg-gray-200 font-semibold text-black":""} mx-4 px-3 py-1 rounded-md`} >Upload</Link>
     </div>
   </div>
-  <div className="navbar-end">
-    <button onClick={handleLogout} className="btn">Logout</button>
+  <div className="navbar-end ">
+  <div className="dropdown dropdown-left dropdown-hover text-black pr-3">
+  <div tabIndex={0} role="button"className="avatar placeholder">
+  <div className="bg-neutral text-neutral-content rounded-full border-2">
+    <span className="text-xl p-3">{(user.email.slice(0,1)).toUpperCase()}</span>
+  </div>
+</div>
+  <ul tabIndex={0} className="dropdown-content z-[1] menu pr-2 shadow bg-base-100 rounded-box font-semibold">
+    <li><Link>{user.email}</Link></li>
+    <li><Link onClick={handleLogout}>Logout</Link></li>
+  </ul>
+</div>
   </div>
 </div>
     </div>
