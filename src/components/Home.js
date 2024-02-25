@@ -41,9 +41,9 @@ export const Home = () => {
     </div>
         )}
       <div className='h-[1rem]'></div>
-      <div className="form-control w-[8rem] bg-gray-300 font-semibold px-1 rounded-xl absolute right-3 top-3">
+      <div className="form-control w-[8rem] bg-white font-semibold px-1 rounded-xl absolute right-3 top-3">
         <label className="label cursor-pointer">
-          <span className="label-text text-black">My Projects</span> 
+          <span className="label-text text-gray-800 font-bold">My Projects</span> 
           <input type="checkbox" checked={isChecked} onChange={handleChange} className="checkbox checkbox-primary" />
         </label>
       </div>

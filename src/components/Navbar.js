@@ -25,15 +25,15 @@ export const Navbar = () => {
       </div>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white font-semibold text-gray-800 rounded-box w-52">
         <li><Link to={"/"} >Home</Link></li>
-        <li><Link to={"/upload"}>Upload</Link></li>
+        <li><Link to={"/upload"} >Upload</Link></li>
       </ul>
     </div>
     <Link to={"/"} className="btn btn-ghost text-xl">Project-Expo</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <div className="menu menu-horizontal px-1">
-        <Link to={"/"} className={`${path==="/"?"bg-gray-200 font-semibold text-black":""} mx-4 px-3 py-1 rounded-md`} >Home</Link>
-        <Link to={"/upload"} className={`${path==="/upload"?"bg-gray-200 font-semibold text-black":""} mx-4 px-3 py-1 rounded-md`} >Upload</Link>
+        <Link to={"/"} className={`${path==="/"?"bg-gray-200 font-semibold text-black":""} mx-4 px-3 py-1 text-xl rounded-md`} >Home</Link>
+        <Link to={"/upload"} className={`${path==="/upload"?"bg-gray-200 font-semibold text-black":""} mx-4 px-3 py-1 text-xl rounded-md`} >Upload</Link>
     </div>
   </div>
   <div className="navbar-end ">
