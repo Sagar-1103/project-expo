@@ -32,7 +32,7 @@ export const Upload = () => {
   }
 
   return (
-    <div className="min-h-screen p-3 bg-gradient-to-r from-indigo-400 to-cyan-400 flex justify-center items-center">
+    <div className="min-h-screen p-3 bg-gradient-to-r from-fuchsia-500 to-cyan-500 flex justify-center items-center">
   <div className="bg-white rounded-lg shadow-lg">
     <h2 className="text-2xl font-bold p-4 text-center -mb-5 text-black">Project Submission Form</h2>
     <div className="divider px-5"></div> 

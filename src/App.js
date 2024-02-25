@@ -8,6 +8,7 @@ import { Signup } from './components/Signup';
 import { AuthProvider } from './context/auth';
 import PublicRoute from './routes/PublicRoute';
 import PrivateRoute from './routes/PrivateRoute';
+import { Clickedproject } from './components/Clickedproject';
 
 function App() {
   return (
@@ -34,6 +35,12 @@ function App() {
                 <PrivateRoute>
                 <Navbar/>
                 <Upload/>
+                  </PrivateRoute>
+    } />
+      <Route path="/projects/:projectId" element={
+                <PrivateRoute>
+                <Navbar/>
+                <Clickedproject/>
                   </PrivateRoute>
     } />
     </Routes>

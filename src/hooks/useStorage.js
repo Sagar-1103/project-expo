@@ -14,6 +14,7 @@ const useStorage = ()=>{
         if (!title && !description && !image && !report ) {
             return;    
         }
+        const id=uuidv4();
         const imageId = uuidv4();
         const reportId = uuidv4();
         const imageFormat = image.type.split("/")[1];
@@ -43,6 +44,7 @@ const useStorage = ()=>{
               },async() => {            
                 const downloadReportURL = await getDownloadURL(reportUploadTask.snapshot.ref);
                 await addDoc(collection(db, "posts"), {
+                    projectId:id,
                     projectTitle:title,
                     projectDescription:description,
                     imageUrl: downloadImageURL,
